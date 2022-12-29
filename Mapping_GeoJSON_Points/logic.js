@@ -72,10 +72,10 @@ d3.json(airportData).then(function(data) {
 
 // Grabbing our GeoJSON data.
 L.geoJSON(airportData, {
-// We turn each feature into a marker on the map.
-    onEachFeature: function(features, layer) {
-        console.log(layer);
-        layer.bindPopup("<h2> Airport code: " + features.properties.faa + "</h2> <hr> <h3>Airport name: " + features.properties.name + "</h3>");
-    }
-            
-}).addTo(map);
+    // We turn each feature into a marker on the map.
+        onEachFeature: function(feature, layer) {
+            console.log(layer);
+            layer.bindPopup("<h2> Airport code: " + feature.properties.faa + "</h2> <hr> <h3>Airport name: " + feature.properties.name + "</h3>");
+        }
+                
+    }).addTo(map);
